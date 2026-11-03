@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliane's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Juliane Celes Fran</a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <i class="fa-solid fa-bars"></i>
+
+        <a href="https://github.com/Olwin05" target="_blank" class="visit-btn">Visit Github</a>
+    </header>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <img src="julyan.webp" alt="">
+
+            <div class="info-box">
+                <div class="text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Juliane Fran</h1>
+                    <span>An Aspiring Web & Backend Developer</span>
+                </div>
+
+                <div class="btn-group">
+                    <div class="btn">Download CV</div>
+                    <div class="btn">Contact</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+
+        <div class="projects-inner">
+            <p class="eyebrow">My Work</p>
+            <h2 class="projects-title">Projects I've worked on</h2>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="card-top blue-1">1</div>
+                    <div class="card-body">
+                        <h3>RescueLink</h3>
+                        <p>An AI-powered incident reporting system that uses real-time GPS and automated triage to accelerate emergency response.</p>
+                        <div class="tags">
+                            <span>React</span><span>Node.js</span><span>Python</span>
+                            <span>PostgreSQL</span><span>PostGIS</span><span>WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-top blue-2">2</div>
+                    <div class="card-body">
+                        <h3>FixIt</h3>
+                        <p>An LLM-powered campus maintenance app that streamlines ticket submission and provides real-time tracking dashboards for facility managers.</p>
+                        <div class="tags">
+                            <span>Flutter</span><span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-top blue-3">3</div>
+                    <div class="card-body">
+                        <h3>CupfeExpresso</h3>
+                        <p>A high-efficiency ordering and reservation system inspired by quick-service establishments, complete with smart QR integration for a queue-free experience.</p>
+                        <div class="tags">
+                            <span>Kotlin</span><span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="contact-subtitle">I'm always open to new opportunities or collaborations. Feel free to reach out!</p>
+
+        <div class="contact-container">
+
+            <div class="contact-options">
+                <a href="mailto:julianeesteban815@gmail.com" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h4>Email</h4>
+                    <span>julianeesteban815@gmail.com</span>
+                </a>
+
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <span>linkedin.com/in/yourprofile</span>
+                </a>
+
+                <a href="https://github.com/Olwin05" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-github"></i>
+                    <h4>GitHub</h4>
+                    <span>github.com/Olwin05</span>
+                </a>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <!-- Get a free key at https://web3forms.com and paste it below -->
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New message from your portfolio">
+                <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+
+                <button type="submit" class="btn submit-btn">Send Message</button>
+                <p id="form-status" class="form-status" role="status"></p>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#" class="footer-logo">Juliane Celes Fran</a>
+
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="footer-socials">
+                <a href="mailto:julianeesteban815@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Olwin05" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; <span id="year">2026</span> Juliane Celes Fran. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
