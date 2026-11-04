@@ -390,8 +390,141 @@ section {
 
 /* =======================
    RESPONSIVE
+   Breakpoints:
+   1400+  large screens | 1100-1400 laptops | 900-1100 small laptops / iPad landscape
+   600-900 tablets / iPad portrait | under 600 phones | landscape phones
    ======================= */
+html, body { overflow-x: hidden; }
+.contact-card span { overflow-wrap: anywhere; text-align: center; }
+
+/* Fluid sizes: scale smoothly between phone and desktop */
+.about img { width: clamp(180px, 20vw, 380px); }
+.info-box h3 { font-size: clamp(1.3rem, 2.2vw, 1.8rem); }
+.info-box h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+.info-box span { font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.section-title { font-size: clamp(2rem, 6vw, 4rem); }
+.projects-title { font-size: clamp(1.5rem, 3.5vw, 2.4rem); }
+
+/* Large screens: keep content from stretching too far */
+@media (min-width: 1400px) {
+    section { padding-left: 16%; padding-right: 16%; }
+    .footer { padding-left: 16%; padding-right: 16%; }
+    .projects-inner, .contact-container { max-width: 1100px; }
+}
+
+/* Small laptops (1366 / 1280) */
+@media (max-width: 1280px) {
+    header { gap: 3rem; }
+    .about .about-container { gap: 6rem; }
+}
+
+/* Small laptops and iPad landscape */
+@media (max-width: 1100px) {
+    header { gap: 2rem; }
+    .logo { font-size: 1.15rem; }
+    .nav-links { gap: 1.5rem; }
+    .visit-btn { padding: 0.7rem 1.2rem; font-size: 0.95rem; }
+    .about .about-container { gap: 4rem; }
+    section { padding-left: 8%; padding-right: 8%; }
+    .projects-grid { gap: 1.25rem; }
+}
+
+/* Tablets (iPad portrait) and below: hamburger menu */
 @media (max-width: 900px) {
-    .projects-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    header {
+        width: calc(100% - 2rem);
+        top: 0.75rem;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 0.7rem 1.25rem;
+    }
+    .logo { font-size: 1.1rem; }
+    .visit-btn { display: none; }
+
+    #menu-icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 1.5rem;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(8px);
+        border-radius: 1.5rem;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a { display: block; padding: 0.9rem 0; }
+    li a::before { display: none; }
+
+    section { padding: 7rem 6% 4rem; }
+
+    .about .about-container {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .about img { width: min(45vw, 300px); }
+    .btn-group { flex-wrap: wrap; justify-content: center; }
+
+    .section-title { margin-bottom: 2rem; }
+    .projects-title { margin-bottom: 2rem; }
+
+    /* 2 columns on tablets, last card centered */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    .projects-grid .project-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 0.625rem);
+        justify-self: center;
+    }
+
+    .contact-subtitle { margin-top: -1rem; margin-bottom: 2.5rem; font-size: 1rem; }
+    .contact-container { gap: 2rem; }
+
+    .footer { padding: 3rem 6% 1.5rem; }
     .footer-inner { flex-direction: column; text-align: center; }
+    .footer-links { gap: 1.5rem; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .projects-grid .project-card:last-child { width: 100%; grid-column: auto; }
+    .contact-options, .contact-form { min-width: 0; flex: 1 1 100%; }
+    .about img { width: min(60vw, 240px); }
+    .card-top { height: 220px; }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .logo { font-size: 1rem; }
+    .btn { padding: 0.5rem 1.1rem; }
+    section { padding-left: 5%; padding-right: 5%; }
+}
+
+/* Phones in landscape (short screens) */
+@media (max-height: 500px) and (orientation: landscape) {
+    section { min-height: auto; padding-top: 6rem; padding-bottom: 3rem; }
+    .about .about-container { flex-direction: row; gap: 2.5rem; }
+    .about img { width: 28vh; min-width: 120px; }
+}
+
+/* Touch devices: avoid hover effects sticking after a tap */
+@media (hover: none) {
+    .project-card:hover,
+    .contact-card:hover { transform: none; }
+}
+
+/* Respect "reduce motion" setting */
+@media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; transition: none !important; }
 }
